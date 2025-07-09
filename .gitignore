@@ -10,5 +10,6 @@ wheels/
 .venv
 explanation.md
 archive/
+.env
 IMPROVEMENTS.md
 ISSUES.md
