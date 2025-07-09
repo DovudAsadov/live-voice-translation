@@ -2,7 +2,7 @@
 
 A modular, real-time, multilingual voice translation system that transcribes, translates, and speaks your voice in another language — all in your browser.
 
-![screenshot](frontend\static\live-voice-translation.gif)
+![screenshot](frontend/static/live-voice-translation.gif)
 
 ---
 
@@ -20,7 +20,7 @@ A modular, real-time, multilingual voice translation system that transcribes, tr
 ## 📆 Project Structure
 
 ```
-call-translator/
+live-voice-translation/
 ├── backend/
 │   ├── app.py
 │   ├── config.py
@@ -35,7 +35,6 @@ call-translator/
 ├── .env
 ├── Dockerfile
 ├── docker-compose.yml
-├── requirements.txt
 └── README.md
 ```
 
@@ -50,24 +49,56 @@ call-translator/
 - DeepL API Key (or fallback to Hugging Face)
 - CUDA (optional)
 
-### Run Locally
+---
+
+### 📦 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourname/call-translator.git
-cd call-translator
+git clone https://github.com/DovudAsadov/live-voice-translation.git
+cd live-voice-translation
+````
 
-# Backend
-pip install -r backend/requirements.txt
+---
 
-# .env file
+### ⚙️ 2. Install [`uv`](https://github.com/astral-sh/uv) (Python package & environment manager)
+
+If you haven’t installed `uv` yet:
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+---
+
+### 🧪 3. Set Up Python Environment
+
+```bash
+uv venv
+source .venv/bin/activate
+uv sync
+```
+
+---
+
+### 🔐 4. Configure Environment Variables
+
+Create a `.env` file in the project root:
+
+```bash
 echo "DEEPL_TOKEN=your_deepl_api_key" > .env
+echo "OPENAI_TOKEN=your_openai_token" >> .env
+```
 
-# Run server
+> ⚠️ Make sure to use `>>` on the second line to **append** instead of overwrite.
+
+---
+
+### 🚀 5. Run the Backend Server
+
+```bash
 cd backend
 python app.py
 ```
-
-Open `frontend/index.html` in your browser.
 
 ---
 
