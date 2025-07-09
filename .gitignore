@@ -10,6 +10,6 @@ wheels/
 .venv
 explanation.md
 archive/
-backend/test.ipynb
-backend/test-data
-backend/.env
+.env
+IMPROVEMENTS.md
+ISSUES.md
